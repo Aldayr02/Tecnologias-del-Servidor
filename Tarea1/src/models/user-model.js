@@ -1,4 +1,6 @@
 const axios = require('axios').default;
+require('dotenv').config();
+const url = process.env.URL;
 
 class User {
 
@@ -6,7 +8,7 @@ class User {
 
         return new Promise((resolve, reject) => {
             
-            axios.get('https://jsonplaceholder.typicode.com/users')
+            axios.get(url)
             .then((response) => {
 
                 const { data } = {...response}
@@ -27,7 +29,7 @@ class User {
         
         return new Promise((resolve, reject) => {
             
-            axios.get('https://jsonplaceholder.typicode.com/users',{
+            axios.get(url,{
                 params: {
                     id: userId
                 }
@@ -51,7 +53,7 @@ class User {
     upload(){
         return new Promise((resolve, reject) => {
 
-            axios.post('https://jsonplaceholder.typicode.com/users', {
+            axios.post(url, {
                 firstName: 'Astorias',
                 lastName: 'Abysswalker'
               })
@@ -71,9 +73,9 @@ class User {
     uploadPut(userId){
         return new Promise((resolve, reject) => {
 
-            // console.log( 'https://jsonplaceholder.typicode.com/users/' + userId);
+            console.log( url + userId);
 
-            axios.put('https://jsonplaceholder.typicode.com/users/' + userId, {
+            axios.put(url + userId, {
 
                 firstName: 'Gwyn',
                 lastName: 'The Fire Lord'
@@ -97,7 +99,7 @@ class User {
     remove(userId){
         return new Promise((resolve, reject) => {
 
-            axios.delete('https://jsonplaceholder.typicode.com/users/' + userId)
+            axios.delete(url + userId)
             .then((response) => {
                 const { data } = {...response};
                 console.log(response);

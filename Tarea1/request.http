@@ -8,7 +8,7 @@ GET  http://localhost:3001/users HTTP/1.1
 
 ###
 
-GET  http://localhost:3001/users/10 HTTP/1.1
+GET  http://localhost:3001/users/5 HTTP/1.1
 
 {
     "name": "sample",
