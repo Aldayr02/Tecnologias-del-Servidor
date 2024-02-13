@@ -1,2 +1,2 @@
 # Tecnologias-del-Servidor
-Blank branch tha is going to be user as a template for new braches
+Blank branch tha is going to be use as a template for new braches
