@@ -1,5 +1,5 @@
-const User = require('../../../Tarea2/models/user-model');
-const ResponseStatus = require('../../../Tarea2/utils/response-status');
+const User = require('../models/user-model');
+const ResponseStatus = require('../utils/response-status');
 
 class UserController {
 

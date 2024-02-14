@@ -2,7 +2,7 @@ const express = require('express');
 require('dotenv').config();
 
 const app = express();
-const index_routes = require('../Tarea2/routes');
+const index_routes = require('./src/routes');
 const port = process.env.PORT || 3000;
 
 // app.use(express.json());
