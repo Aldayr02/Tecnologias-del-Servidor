@@ -2,7 +2,7 @@ const ResponseStatus = require('../utils/response-status');
 
 const authUser = {
     id: 666,
-    role: 'client',
+    role: 'Admin',
     name: 'Ash'
 }
 
