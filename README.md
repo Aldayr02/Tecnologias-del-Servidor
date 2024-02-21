@@ -16,3 +16,4 @@ Los paquetes que instale estan enel package-lock.json pero fueron los siguientes
         "nodemon": "^3.0.3"
 
 Yo probe los requests con la extension REST Client de vs, por lo que si se instala se pueden probar desde el archivo request.http
+
