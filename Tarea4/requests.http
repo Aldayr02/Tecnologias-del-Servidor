@@ -1,0 +1,10 @@
+//SING UP
+
+POST http://localhost:3001/users/singup
+Content-Type: application/json
+
+{
+    "username": "Gwyn",
+    "email": "G@gmail.com",
+    "password": "pwd"
+}
