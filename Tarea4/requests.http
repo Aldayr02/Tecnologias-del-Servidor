@@ -19,3 +19,9 @@ Content-Type: application/json
     "email": "A@gmail.com",
     "password": "pwd"
 }
+
+###
+
+//API NEWS TEST
+GET http://localhost:3001/news
+

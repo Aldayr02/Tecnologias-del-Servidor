@@ -1,11 +1,13 @@
-const router = require("express").Router();
+const router = require('express').Router();
 
-const usersRoutes = require("../routes/users");
+const users_routes = require('../routes/users');
+const news_routes = require('../routes/news');
 
-router.use("/users", usersRoutes);
+router.use('/users', users_routes);
+router.use('/news', news_routes);
 
-router.get("/", (req, res) => {
-  res.send("Index route");
+router.get('/', (req, res) => {
+  res.send('Index route');
 });
 
 module.exports = router;
