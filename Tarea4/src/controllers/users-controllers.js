@@ -35,7 +35,7 @@ class UsersController {
           };
 
           const send_token = token_utils.create(user_data);
-          res.send(send_token);
+          res.send({ token: send_token });
         } else {
           res.status(ResponseStatus.UNAUTHORIZED).send(`Invalid credentials`);
         }

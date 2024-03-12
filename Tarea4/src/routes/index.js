@@ -7,7 +7,7 @@ router.use('/users', users_routes);
 router.use('/news', news_routes);
 
 router.get('/', (req, res) => {
-  res.send('Index route');
+  res.render('home');
 });
 
 module.exports = router;
