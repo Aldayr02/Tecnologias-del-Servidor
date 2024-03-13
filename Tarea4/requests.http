@@ -1,0 +1,27 @@
+//SING UP
+
+POST http://localhost:3001/users/singup
+Content-Type: application/json
+
+{
+    "username": "Asthorias",
+    "email": "A@gmail.com",
+    "password": "pwd"
+}
+
+###
+
+//lOG IN
+POST http://localhost:3001/users/login
+Content-Type: application/json
+
+{
+    "email": "A@gmail.com",
+    "password": "pwd"
+}
+
+###
+
+//API NEWS TEST
+GET http://localhost:3001/news
+

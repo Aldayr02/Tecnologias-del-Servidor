@@ -1,0 +1,63 @@
+.login-container {
+
+    position: absolute; /* Positioning relative to the nearest positioned ancestor (body in this case) */
+    top: 50%; /* 50% from the top of the body */
+    left: 50%; /* 50% from the left of the body */
+    transform: translate(-50%, -50%); /* This perfectly centers the container */
+    width: 100%;
+    max-width: 400px;
+    background-color: #303134;
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box; /* Include padding and border in the width and height */
+}
+
+.login-title {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: #42464d;
+    color: white;
+}
+
+.login-button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #5f6368;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.login-button:hover {
+    background-color: #8ab4f8;
+}
+
+/* Handle small screen sizes */
+@media (max-width: 768px) {
+    .login-container {
+        margin: 10px;
+        width: auto;
+    }
+}
