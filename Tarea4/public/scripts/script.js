@@ -6,8 +6,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const signUpButton = document.querySelector('#singUpButton');
   signUpButton.addEventListener('click', change_to_singup);
 
-  //   const loginSubmit = document.querySelector('#loginSubmit');
-  //   loginSubmit.addEventListener('click', login_post);
+  const loginSubmit = document.querySelector('#loginSubmit');
+  loginSubmit.addEventListener('click', (event) => {
+    event.preventDefault();
+    login_post();
+  });
 
   const singupSumit = document.querySelector('#singUpSubmit');
   singupSumit.addEventListener('click', (event) => {
@@ -48,7 +51,7 @@ function singup_post() {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response}`);
       }
-      console.log(`AAAAAA`);
+      //   console.log(`AAAAAA`);
       return response.json();
     })
     .then((response) => {
@@ -60,5 +63,31 @@ function singup_post() {
 }
 
 function login_post() {
-  console.log(`Log in post`);
+  const email = document.querySelector('#emailInputLogin').value;
+  const password = document.querySelector('#passwordInputLogin').value;
+
+  console.log(`${email}`);
+  console.log(`${password}`);
+
+  fetch('/users/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email: email,
+      password: password,
+    }),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response}`);
+      }
+      return response.json();
+    })
+    .then((response) => {
+      console.log(`Successful login_post - ${response.token}`);
+    })
+    .catch((e) => {
+      console.log(`Something wrong login_post - ${e}`);
+    });
+  //   console.log(`Log in post`);
 }

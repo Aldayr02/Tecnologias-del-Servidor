@@ -4,6 +4,7 @@ const token_utils = require('../utils/token');
 
 class UsersController {
   singUp(req, res) {
+    // console.log(req.body.username);
     const data = {
       username: req.body.username,
       password: req.body.password,
@@ -12,7 +13,7 @@ class UsersController {
 
     UserModel.create(data)
       .then((response) => {
-        console.log(`then of UserModel.create`);
+        // console.log(`then of UserModel.create`);
         res.send(response);
       })
       .catch((e) => {
@@ -29,7 +30,7 @@ class UsersController {
 
     UserModel.findOne(data)
       .then((response) => {
-        console.log(response.username);
+        // console.log(response.username);
         if (response) {
           const user_data = {
             name: response.username,
