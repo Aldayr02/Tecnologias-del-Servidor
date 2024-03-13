@@ -12,9 +12,11 @@ class UsersController {
 
     UserModel.create(data)
       .then((response) => {
+        console.log(`then of UserModel.create`);
         res.send(response);
       })
       .catch((e) => {
+        console.log(e);
         res.status(ResponseStatus.BAD_REQUEST).send('Something wrong singUp ' + e);
       });
   }
