@@ -1,0 +1,31 @@
+.card {
+    background: #303134;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+  .checkmark {
+    background: #4CAF50;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .message {
+    margin: 20px 0;
+    font-size: 1.5em;
+    color: white;
+  }
+  .proceed-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+  }

@@ -7,16 +7,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
   signUpButton.addEventListener('click', change_to_singup);
 
   const loginSubmit = document.querySelector('#loginSubmit');
-  loginSubmit.addEventListener('click', (event) => {
-    event.preventDefault();
-    login_post();
-  });
+
+  if (loginSubmit) {
+    loginSubmit.addEventListener('click', (event) => {
+      event.preventDefault();
+      login_post();
+    });
+  }
 
   const singupSumit = document.querySelector('#singUpSubmit');
-  singupSumit.addEventListener('click', (event) => {
-    event.preventDefault();
-    singup_post();
-  });
+  if (singupSumit) {
+    singupSumit.addEventListener('click', (event) => {
+      event.preventDefault();
+      singup_post();
+    });
+  }
 });
 
 function change_to_login() {
@@ -27,6 +32,11 @@ function change_to_login() {
 function change_to_singup() {
   window.location.href = '/users/singup';
   console.log(`Changing to /users/singup`);
+}
+
+function change_to_successful_singup() {
+  console.log(`Changing to /users/successful-singup`);
+  window.location.href = '/users/successful-singup';
 }
 
 function singup_post() {
@@ -49,13 +59,14 @@ function singup_post() {
   })
     .then((response) => {
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response}`);
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
       //   console.log(`AAAAAA`);
       return response.json();
     })
     .then((response) => {
       console.log(`Successful singup_post - ${response}`);
+      change_to_successful_singup();
     })
     .catch((e) => {
       console.log(`Something wrong singup_post - ${e}`);
@@ -79,7 +90,7 @@ function login_post() {
   })
     .then((response) => {
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response}`);
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
       return response.json();
     })
